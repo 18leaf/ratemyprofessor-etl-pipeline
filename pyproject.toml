@@ -1,0 +1,40 @@
+[project]
+name = "rmp-etl-pipeline"
+version = "0.1.0"
+description = "ETL pipeline (extract/transform/load) that builds a SQLite snapshot and a Next.js API query layer."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Lindsey" }]
+
+# This project currently relies on `requirements.txt` for runtime deps.
+# The config below is intentionally "optional tooling" for formatting/linting.
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+fix = true
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "I",   # isort (import sorting)
+  "UP",  # pyupgrade
+  "B",   # flake8-bugbear
+]
+ignore = [
+  "E501", # let the formatter handle long lines where possible
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["transform", "load"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-q"

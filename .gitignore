@@ -1,0 +1,98 @@
+# ETL Pipeline (.gitignore)
+# Focus: keep the repo clean/presentable for reviewers while still allowing small sample data if desired.
+
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+ENV/
+env/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+############################
+# Node / Next.js
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.next/
+out/
+dist/
+build/
+.turbo/
+.vercel/
+
+############################
+# Logs
+############################
+*.log
+logs/
+
+############################
+# Databases / Outputs
+############################
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+*.parquet
+*.feather
+
+out/
+outputs/
+artifacts/
+tmp/
+temp/
+
+############################
+# Data (default: ignore)
+# - Keep only explicitly-added sample data by negating these rules.
+############################
+data/
+raw_data/
+raw/
+clean/
+processed/
+staging/
+
+# Allow you to check in curated samples intentionally
+!data/README.md
+!data/sample/**
+!data/samples/**
+!data/**/.gitkeep
+
+############################
+# Secrets / Env
+############################
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+secrets/
